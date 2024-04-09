@@ -477,7 +477,22 @@
     ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+    <script>
+      function addWish() {
+        var nameInput = document.getElementById("name").value;
+        var messageInput = document.getElementById("message").value;
+        var wishList = document.getElementById("wishList");
     
+        if (nameInput.trim() !== "" && messageInput.trim() !== "") {
+          var wishItem = document.createElement("div");
+          wishItem.classList.add("wish-item");
+          wishItem.innerHTML = "<p style='color:red;'><strong>Name: " + nameInput + "</strong></p><p style='color:green;'><i>Message:" + messageInput + "</i></p>";
+          wishList.appendChild(wishItem);
+          document.getElementById("name").value = "";
+          document.getElementById("message").value = "";
+        }
+      }
+    </script>
 <script>
   var audio = document.getElementById('audio');
   
